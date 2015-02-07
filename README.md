@@ -1,4 +1,4 @@
-# Workroom easy Development
+# Easy development with Workroom
 Workroom is an easy Vagrant development environment with an additional serve script.
 Don´t worry about environments, stay focused on your code!
 
@@ -8,11 +8,11 @@ Fist download the workroom folder and place it where you store your projects to 
 
 ### Vagrant
 You need to have Vagrant installed. <br />
-Get it right here [Vagrant](https://www.vagrantup.com/downloads.html)
+Get it right here [https://www.vagrantup.com/downloads.html](https://www.vagrantup.com/downloads.html)
 
 ### Virtual Box
 Install the latest version of Virtualbox. <br />
-Here [Virtualbox](https://www.virtualbox.org/wiki/Downloads)
+Here [https://www.virtualbox.org/wiki/Downloads](https://www.virtualbox.org/wiki/Downloads)
 
 ### Vagrant Manager
 For managing our development enviroments download <br />
