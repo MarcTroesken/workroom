@@ -22,11 +22,11 @@ For managing our development enviroments download and install<br />
 Add your workroom folder to `Bookmarks`in Vagrant Manger. <br />
 Click the Vagrant Manager icon in your status bar an select `Manage Bookmarks`. <br />
 
-![Bookmarks](bookmarks.png)
+![Bookmarks](assets/bookmarks.png)
 
 Search for your workroom folder an select it.
 
-![Bookmakrs2](bookmarks2.png)
+![Bookmakrs2](assets/bookmarks2.png)
 
 Save your settings. After that you´ll see your workroom environment showing up in Vagrant Manager.
 Hover over it and by clicking `Up` the environent boots and is ready for use.
@@ -38,7 +38,7 @@ Name: `Add Site` _(Or what ever you would like to name it)_ <br />
 Command: `sudo sh /home/vagrant/Code/workroom/serve.sh` <br />
 Run in Terminal: check that
 <br /><br />
-![Commands](command.png)
+![Commands](assets/command.png)
 <br />
 
 Now just hover over your virtual machine in Vagrant Manager an select the `Custom Command` and then
