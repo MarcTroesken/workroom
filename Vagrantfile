@@ -12,6 +12,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # VirtualBox Settings
     config.vm.provider "virtualbox" do |vb|
       vb.name = 'workroom'
+      vb.customize ["modifyvm", :id, "--memory", "2048"]
+      vb.customize ["modifyvm", :id, "--cpus", "1"]
     end
 
     config.vm.provision :shell, :path => "install.sh"
