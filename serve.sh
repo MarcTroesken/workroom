@@ -1,39 +1,50 @@
 #!/usr/bin/env bash
 
-# Ask for Sites Name
-read -p "Please enter document root: " root
-read -p "Please enter sites name: " name
+# Ask for site name and root
+read -p "Please enter server name: " server
+read -p "Please enter root: " root
 
-# config stub
-block="<VirtualHost *:80>
+block="server {
+    listen 80;
+    server_name $server;
+    root \"$root\";
 
-    ServerAdmin webmaster@localhost
-    DocumentRoot /var/www/$root/public
-    ServerName $name.local
+    index index.html index.htm index.php;
 
-</VirtualHost>
+    charset utf-8;
+
+    location / {
+        try_files \$uri \$uri/ /index.php?\$query_string;
+    }
+
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location = /robots.txt  { access_log off; log_not_found off; }
+
+    access_log off;
+    error_log  /var/log/nginx/$server-error.log error;
+
+    sendfile off;
+
+    client_max_body_size 100m;
+
+    location ~ \.php$ {
+        fastcgi_split_path_info ^(.+\.php)(/.+)$;
+        fastcgi_pass unix:/var/run/php5-fpm.sock;
+        fastcgi_index index.php;
+        include fastcgi_params;
+        fastcgi_param SCRIPT_FILENAME \$document_root\$fastcgi_script_name;
+        fastcgi_intercept_errors off;
+        fastcgi_buffer_size 16k;
+        fastcgi_buffers 4 16k;
+    }
+
+    location ~ /\.ht {
+        deny all;
+    }
+}
 "
 
-# Write it into file
-echo "$block" > "/etc/apache2/sites-available/$name.conf"
-
-a2ensite $name.conf
-service apache2 restart
-
-echo "--- Page added successfully ---"
-
-# Ask for Database
-while true; do
-    read -p "Do you wish to create a Db? <y/N> " yn
-    echo ""
-    case $yn in
-        [Yy]* )
-            mysql -uroot -proot -e "DROP DATABASE IF EXISTS \`$name\`";
-            mysql -uroot -proot -e "CREATE DATABASE \`$name\`";
-
-            echo "--- Database created successfully---"
-            break;;
-        [Nn]* ) exit;;
-        * ) echo "Please answer yes or no.";;
-    esac
-done
+echo "$block" > "/etc/nginx/sites-available/$server"
+ln -fs "/etc/nginx/sites-available/$server" "/etc/nginx/sites-enabled/$server"
+service nginx restart
+service php5-fpm restart
