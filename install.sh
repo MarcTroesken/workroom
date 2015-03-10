@@ -7,6 +7,7 @@ sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again p
 
 sudo apt-get install -y vim curl python-software-properties
 sudo add-apt-repository -y ppa:ondrej/php5-5.6
+sudo apt-add-repository ppa:nginx/development
 
 sudo apt-get update
 
