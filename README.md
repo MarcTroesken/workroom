@@ -4,7 +4,7 @@ Don´t worry about environments, stay focused on your code!
 
 ## Installation
 Fist download the workroom folder and place it where you store your projects.
-> [Download workroom](https://github.com/MarcTroesken/workroom/archive/v1.1.zip)
+> [Download workroom](https://github.com/MarcTroesken/workroom/archive/v1.2.zip)
 
 ### Vagrant
 You need to have Vagrant installed. <br />
