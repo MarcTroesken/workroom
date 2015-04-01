@@ -4,7 +4,7 @@ Don´t worry about environments, stay focused on your code!
 
 ## Installation
 Fist download the workroom folder and place it where you store your projects.
-> [Download workroom](https://github.com/MarcTroesken/workroom/archive/v1.0.zip)
+> [Download workroom](https://github.com/MarcTroesken/workroom/archive/v1.1.zip)
 
 ### Vagrant
 You need to have Vagrant installed. <br />
@@ -41,7 +41,7 @@ Run in Terminal: check that
 ![Commands](assets/command.png)
 <br />
 
-Now just hover over your virtual machine in Vagrant Manager an select the `Custom Command` and then
+After your machine is running, just hover over your virtual machine in Vagrant Manager an select the `Custom Command` and then
 `Add Site`. Just follow the steps after the Terminal opened.
 
 
