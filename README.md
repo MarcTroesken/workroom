@@ -42,7 +42,7 @@ Run in Terminal: check that
 <br />
 
 After your machine is running, just hover over your virtual machine in Vagrant Manager an select the `Custom Command` and then
-`Add Site`. Just follow the steps after the Terminal opened.
+`Add Site`. Type server name like: myDomain.local. Type root folder like: myapp/public.
 
 
 
