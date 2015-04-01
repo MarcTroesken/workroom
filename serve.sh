@@ -7,7 +7,7 @@ read -p "Please enter root: " root
 block="server {
     listen 80;
     server_name $server;
-    root \"$root\";
+    root \"/home/vagrant/Code/$root\";
 
     index index.html index.htm index.php;
 
